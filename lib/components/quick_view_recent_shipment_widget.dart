@@ -48,7 +48,7 @@ class _QuickViewRecentShipmentWidgetState
       width: double.infinity,
       height: 70.0,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryBackground,
+        color: FlutterFlowTheme.of(context).white,
         borderRadius: BorderRadius.circular(5.0),
       ),
       child: Row(

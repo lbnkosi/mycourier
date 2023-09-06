@@ -234,8 +234,7 @@ class _QuickViewShipmentWidgetState extends State<QuickViewShipmentWidget> {
                                   width: 100.0,
                                   height: 14.0,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color: FlutterFlowTheme.of(context).white,
                                   ),
                                 ),
                                 Text(
