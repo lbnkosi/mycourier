@@ -49,7 +49,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(0.0),
           child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primary,
+            backgroundColor: FlutterFlowTheme.of(context).black,
             automaticallyImplyLeading: true,
             actions: [],
             centerTitle: true,
@@ -170,9 +170,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               shape: BoxShape
                                                                   .circle,
                                                             ),
-                                                            child:
-                                                                Image.network(
-                                                              'https://picsum.photos/seed/535/600',
+                                                            child: Image.asset(
+                                                              'assets/images/369483587_255744683958928_8782896439560578678_n.jpg',
                                                               fit: BoxFit.cover,
                                                             ),
                                                           ),
@@ -605,7 +604,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('TrackingPage');
+                              context.pushNamed(
+                                'TrackingPage',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.rightToLeft,
+                                  ),
+                                },
+                              );
                             },
                             child: wrapWithModel(
                               model: _model.quickViewShipmentModel,
@@ -658,6 +666,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ],
                     ),
                   ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 1.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).alternate,
                 ),
               ),
               wrapWithModel(

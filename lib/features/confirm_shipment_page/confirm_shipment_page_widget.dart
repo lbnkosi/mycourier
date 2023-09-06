@@ -462,20 +462,18 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                         context.safePop();
                       },
                       child: Container(
-                        width: 40.0,
-                        height: 40.0,
+                        width: 30.0,
+                        height: 30.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.0),
-                          border: Border.all(
-                            color: FlutterFlowTheme.of(context).justBlack,
-                          ),
+                          color: FlutterFlowTheme.of(context).primary,
+                          shape: BoxShape.circle,
                         ),
                         child: Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: FaIcon(
                             FontAwesomeIcons.arrowLeft,
-                            color: FlutterFlowTheme.of(context).justBlack,
-                            size: 14.0,
+                            color: FlutterFlowTheme.of(context).justWhite,
+                            size: 12.0,
                           ),
                         ),
                       ),
@@ -483,7 +481,7 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 40.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                         child: Text(
                           'Confirm Shipment',
                           textAlign: TextAlign.center,

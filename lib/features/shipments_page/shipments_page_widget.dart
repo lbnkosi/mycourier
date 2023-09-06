@@ -45,6 +45,16 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(0.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).black,
+            automaticallyImplyLeading: true,
+            actions: [],
+            centerTitle: true,
+            elevation: 0.0,
+          ),
+        ),
         body: SafeArea(
           top: true,
           child: Column(
@@ -117,7 +127,6 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                           32.0, 32.0, 32.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController,
-                                        autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelText: 'Search',
@@ -143,7 +152,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .inactivePrimary,
+                                                      .justWhite,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -153,7 +162,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primary,
+                                                      .justWhite,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -341,6 +350,13 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                       ],
                     ),
                   ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 1.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).alternate,
                 ),
               ),
               wrapWithModel(

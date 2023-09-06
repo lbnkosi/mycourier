@@ -183,7 +183,8 @@ class _IntroSlider3WidgetState extends State<IntroSlider3Widget> {
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
+                                        transitionType:
+                                            PageTransitionType.rightToLeft,
                                       ),
                                     },
                                   );

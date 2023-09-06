@@ -55,7 +55,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(0.0),
           child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primary,
+            backgroundColor: FlutterFlowTheme.of(context).black,
             automaticallyImplyLeading: true,
             actions: [],
             centerTitle: true,
@@ -709,19 +709,17 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                         context.safePop();
                       },
                       child: Container(
-                        width: 40.0,
-                        height: 40.0,
+                        width: 30.0,
+                        height: 30.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.0),
-                          border: Border.all(
-                            color: FlutterFlowTheme.of(context).justBlack,
-                          ),
+                          color: FlutterFlowTheme.of(context).primary,
+                          shape: BoxShape.circle,
                         ),
                         child: Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: FaIcon(
                             FontAwesomeIcons.arrowLeft,
-                            color: FlutterFlowTheme.of(context).justBlack,
+                            color: FlutterFlowTheme.of(context).justWhite,
                             size: 14.0,
                           ),
                         ),
@@ -730,7 +728,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 40.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                         child: Text(
                           'Create Shipment',
                           textAlign: TextAlign.center,
