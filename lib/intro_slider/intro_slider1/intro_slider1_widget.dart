@@ -104,10 +104,11 @@ class _IntroSlider1WidgetState extends State<IntroSlider1Widget> {
                                 height: 40.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                   borderRadius: BorderRadius.circular(50.0),
                                   border: Border.all(
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                   ),
                                 ),
                               ),
