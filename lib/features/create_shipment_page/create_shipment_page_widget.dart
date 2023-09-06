@@ -52,12 +52,22 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(0.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primary,
+            automaticallyImplyLeading: true,
+            actions: [],
+            centerTitle: true,
+            elevation: 0.0,
+          ),
+        ),
         body: SafeArea(
           top: true,
           child: Stack(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(0.0),
                 child: Image.asset(
                   'assets/images/google-maps-alternatives-featured-image.png',
                   width: double.infinity,
