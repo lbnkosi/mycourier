@@ -437,7 +437,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Send',
+                                                  'Pick Up',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
