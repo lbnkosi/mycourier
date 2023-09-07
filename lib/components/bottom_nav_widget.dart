@@ -61,7 +61,7 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('HomePage');
+                    context.goNamed('HomePage');
                   },
                   child: Container(
                     width: 100.0,
@@ -103,7 +103,7 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed(
+                    context.goNamed(
                       'ShipmentsPage',
                       extra: <String, dynamic>{
                         kTransitionInfoKey: TransitionInfo(
@@ -180,35 +180,52 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
                 ),
               ),
               Expanded(
-                child: Container(
-                  width: 100.0,
-                  height: 100.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).bottomNavColour,
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.help_outline,
-                        color: FlutterFlowTheme.of(context).bottomNavIcons,
-                        size: 20.0,
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                        child: Text(
-                          'Help',
-                          style:
-                              FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 10.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.goNamed(
+                      'HelpPage',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.rightToLeft,
                         ),
-                      ),
-                    ],
+                      },
+                    );
+                  },
+                  child: Container(
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).bottomNavColour,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.help_outline,
+                          color: FlutterFlowTheme.of(context).bottomNavIcons,
+                          size: 20.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 4.0, 0.0, 0.0),
+                          child: Text(
+                            'Help',
+                            style:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 10.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -219,8 +236,8 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed(
-                      'SettingsPage',
+                    context.goNamed(
+                      'ProfilePage',
                       extra: <String, dynamic>{
                         kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,

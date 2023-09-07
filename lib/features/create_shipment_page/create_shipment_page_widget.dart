@@ -658,7 +658,8 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
+                                      transitionType:
+                                          PageTransitionType.rightToLeft,
                                     ),
                                   },
                                 );

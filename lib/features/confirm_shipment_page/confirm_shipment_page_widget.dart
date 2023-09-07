@@ -411,7 +411,8 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
+                                      transitionType:
+                                          PageTransitionType.rightToLeft,
                                     ),
                                   },
                                 );

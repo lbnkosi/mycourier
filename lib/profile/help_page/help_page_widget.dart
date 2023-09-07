@@ -1,3 +1,4 @@
+import '/components/bottom_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,22 @@ class _HelpPageWidgetState extends State<HelpPageWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            children: [],
+            children: [
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                ),
+              ),
+              wrapWithModel(
+                model: _model.bottomNavModel,
+                updateCallback: () => setState(() {}),
+                child: BottomNavWidget(),
+              ),
+            ],
           ),
         ),
       ),

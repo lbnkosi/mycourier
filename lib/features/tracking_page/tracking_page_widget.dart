@@ -1,3 +1,4 @@
+import '/components/custom_app_bar_widget.dart';
 import '/components/quick_view_shipment_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -60,64 +61,11 @@ class _TrackingPageWidgetState extends State<TrackingPageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                width: double.infinity,
-                height: 60.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primary,
-                ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.safePop();
-                        },
-                        child: Container(
-                          width: 30.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).justWhite,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: FaIcon(
-                              FontAwesomeIcons.arrowLeft,
-                              color: FlutterFlowTheme.of(context).justWhite,
-                              size: 12.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 30.0, 0.0),
-                          child: Text(
-                            'Track Shipment',
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).justWhite,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+              wrapWithModel(
+                model: _model.customAppBarModel,
+                updateCallback: () => setState(() {}),
+                child: CustomAppBarWidget(
+                  title: 'Tracking',
                 ),
               ),
               Expanded(
@@ -498,6 +446,7 @@ class _TrackingPageWidgetState extends State<TrackingPageWidget> {
                                   fontFamily: 'Montserrat',
                                   color: FlutterFlowTheme.of(context).justWhite,
                                 ),
+                            elevation: 0.0,
                             borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,

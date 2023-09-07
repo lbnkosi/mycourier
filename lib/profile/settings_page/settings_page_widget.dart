@@ -1,3 +1,4 @@
+import '/components/custom_app_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,59 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            children: [],
+            children: [
+              wrapWithModel(
+                model: _model.customAppBarModel,
+                updateCallback: () => setState(() {}),
+                child: CustomAppBarWidget(
+                  title: 'Settings',
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Enable Dark Mode',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                          Switch.adaptive(
+                            value: _model.switchValue ??= true,
+                            onChanged: (newValue) async {
+                              setState(() => _model.switchValue = newValue!);
+                              if (newValue!) {
+                                setDarkModeSetting(context, ThemeMode.dark);
+                              } else {
+                                setDarkModeSetting(context, ThemeMode.light);
+                              }
+                            },
+                            activeColor: FlutterFlowTheme.of(context).primary,
+                            activeTrackColor:
+                                FlutterFlowTheme.of(context).inactivePrimary,
+                            inactiveTrackColor:
+                                FlutterFlowTheme.of(context).alternate,
+                            inactiveThumbColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

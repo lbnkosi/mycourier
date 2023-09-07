@@ -1,3 +1,4 @@
+import '/components/custom_app_bar_widget.dart';
 import '/components/quick_view_shipment_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -11,18 +12,22 @@ class TrackingPageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Model for CustomAppBar component.
+  late CustomAppBarModel customAppBarModel;
   // Model for QuickViewShipment component.
   late QuickViewShipmentModel quickViewShipmentModel;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
+    customAppBarModel = createModel(context, () => CustomAppBarModel());
     quickViewShipmentModel =
         createModel(context, () => QuickViewShipmentModel());
   }
 
   void dispose() {
     unfocusNode.dispose();
+    customAppBarModel.dispose();
     quickViewShipmentModel.dispose();
   }
 
