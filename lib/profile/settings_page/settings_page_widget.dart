@@ -44,18 +44,17 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
+          automaticallyImplyLeading: true,
           title: Text(
-            'Page Title',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
+            'Settings',
+            style: FlutterFlowTheme.of(context).bodySmall.override(
                   fontFamily: 'Montserrat',
-                  color: Colors.white,
-                  fontSize: 22.0,
+                  color: FlutterFlowTheme.of(context).justWhite,
                 ),
           ),
           actions: [],
           centerTitle: false,
-          elevation: 2.0,
+          elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
