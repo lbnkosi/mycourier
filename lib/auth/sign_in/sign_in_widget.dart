@@ -224,7 +224,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       return;
                     }
 
-                    context.pushNamedAuth('HomePage', context.mounted);
+                    context.goNamedAuth('HomePage', context.mounted);
                   },
                   text: 'Sign In',
                   options: FFButtonOptions(

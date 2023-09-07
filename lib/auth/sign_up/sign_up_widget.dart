@@ -501,8 +501,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
 
                         await authManager.sendEmailVerification();
 
-                        context.pushNamedAuth(
-                            'VerificationPage', context.mounted);
+                        context.goNamedAuth(
+                          'VerificationPage',
+                          context.mounted,
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.rightToLeft,
+                            ),
+                          },
+                        );
                       },
                       text: 'Sign In',
                       options: FFButtonOptions(
