@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -212,7 +213,18 @@ class _SignInWidgetState extends State<SignInWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('HomePage');
+                    GoRouter.of(context).prepareAuthEvent();
+
+                    final user = await authManager.signInWithEmail(
+                      context,
+                      _model.emailController.text,
+                      _model.passwordController.text,
+                    );
+                    if (user == null) {
+                      return;
+                    }
+
+                    context.pushNamedAuth('HomePage', context.mounted);
                   },
                   text: 'Sign In',
                   options: FFButtonOptions(
@@ -338,26 +350,44 @@ class _SignInWidgetState extends State<SignInWidget> {
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don\'t have an account?',
-                      style: FlutterFlowTheme.of(context).bodySmall,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Sign Up.',
-                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Montserrat',
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed(
+                      'SignUp',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.rightToLeft,
+                        ),
+                      },
+                    );
+                  },
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Don\'t have an account?',
+                        style: FlutterFlowTheme.of(context).bodySmall,
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'Sign Up.',
+                          style:
+                              FlutterFlowTheme.of(context).bodySmall.override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).primary,
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

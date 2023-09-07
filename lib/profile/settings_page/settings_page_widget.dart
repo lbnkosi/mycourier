@@ -86,7 +86,8 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                 ),
                           ),
                           Switch.adaptive(
-                            value: _model.switchValue ??= true,
+                            value: _model.switchValue ??=
+                                Theme.of(context).brightness == Brightness.dark,
                             onChanged: (newValue) async {
                               setState(() => _model.switchValue = newValue!);
                               if (newValue!) {

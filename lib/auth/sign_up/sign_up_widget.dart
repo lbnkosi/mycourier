@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -29,10 +31,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
 
     _model.nameController ??= TextEditingController();
     _model.surnameController ??= TextEditingController();
-    _model.emailController1 ??= TextEditingController();
-    _model.emailController2 ??= TextEditingController();
-    _model.passwordController1 ??= TextEditingController();
-    _model.passwordController2 ??= TextEditingController();
+    _model.emailController ??= TextEditingController();
+    _model.phoneController ??= TextEditingController();
+    _model.passwordController ??= TextEditingController();
+    _model.confirmPasswordController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -195,7 +197,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(32.0, 16.0, 32.0, 0.0),
                     child: TextFormField(
-                      controller: _model.emailController1,
+                      controller: _model.emailController,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Email Address',
@@ -238,7 +240,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall,
                       validator:
-                          _model.emailController1Validator.asValidator(context),
+                          _model.emailControllerValidator.asValidator(context),
                     ),
                   ),
                   Padding(
@@ -281,7 +283,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 0.0, 0.0),
                             child: TextFormField(
-                              controller: _model.emailController2,
+                              controller: _model.phoneController,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelStyle:
@@ -320,7 +322,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ),
                               ),
                               style: FlutterFlowTheme.of(context).bodySmall,
-                              validator: _model.emailController2Validator
+                              validator: _model.phoneControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -332,8 +334,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(32.0, 16.0, 32.0, 0.0),
                     child: TextFormField(
-                      controller: _model.passwordController1,
-                      obscureText: !_model.passwordVisibility1,
+                      controller: _model.passwordController,
+                      obscureText: !_model.passwordVisibility,
                       decoration: InputDecoration(
                         labelText: 'Password',
                         labelStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -374,12 +376,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                         suffixIcon: InkWell(
                           onTap: () => setState(
-                            () => _model.passwordVisibility1 =
-                                !_model.passwordVisibility1,
+                            () => _model.passwordVisibility =
+                                !_model.passwordVisibility,
                           ),
                           focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
-                            _model.passwordVisibility1
+                            _model.passwordVisibility
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
                             color: FlutterFlowTheme.of(context).textFieldIcon,
@@ -388,7 +390,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall,
-                      validator: _model.passwordController1Validator
+                      validator: _model.passwordControllerValidator
                           .asValidator(context),
                     ),
                   ),
@@ -396,8 +398,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(32.0, 16.0, 32.0, 0.0),
                     child: TextFormField(
-                      controller: _model.passwordController2,
-                      obscureText: !_model.passwordVisibility2,
+                      controller: _model.confirmPasswordController,
+                      obscureText: !_model.confirmPasswordVisibility,
                       decoration: InputDecoration(
                         labelText: 'Password',
                         labelStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -438,12 +440,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                         suffixIcon: InkWell(
                           onTap: () => setState(
-                            () => _model.passwordVisibility2 =
-                                !_model.passwordVisibility2,
+                            () => _model.confirmPasswordVisibility =
+                                !_model.confirmPasswordVisibility,
                           ),
                           focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
-                            _model.passwordVisibility2
+                            _model.confirmPasswordVisibility
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
                             color: FlutterFlowTheme.of(context).textFieldIcon,
@@ -452,35 +454,55 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall,
-                      validator: _model.passwordController2Validator
+                      validator: _model.confirmPasswordControllerValidator
                           .asValidator(context),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(32.0, 12.0, 32.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Forgot Password?',
-                          style:
-                              FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Montserrat',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                      ],
                     ),
                   ),
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 0.0),
                     child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        GoRouter.of(context).prepareAuthEvent();
+                        if (_model.passwordController.text !=
+                            _model.confirmPasswordController.text) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Passwords don\'t match!',
+                              ),
+                            ),
+                          );
+                          return;
+                        }
+
+                        final user = await authManager.createAccountWithEmail(
+                          context,
+                          _model.emailController.text,
+                          _model.passwordController.text,
+                        );
+                        if (user == null) {
+                          return;
+                        }
+
+                        await UsersRecord.collection
+                            .doc(user.uid)
+                            .update(createUsersRecordData(
+                              email: '',
+                              displayName:
+                                  '${_model.nameController.text} ${_model.surnameController.text}',
+                              photoUrl: '',
+                              createdTime: getCurrentTimestamp,
+                              phoneNumber:
+                                  '${_model.dropDownValue}${_model.phoneController.text}',
+                              name: _model.nameController.text,
+                              surname: _model.surnameController.text,
+                            ));
+
+                        await authManager.sendEmailVerification();
+
+                        context.pushNamedAuth(
+                            'VerificationPage', context.mounted);
                       },
                       text: 'Sign In',
                       options: FFButtonOptions(
