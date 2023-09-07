@@ -48,7 +48,7 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(0.0),
           child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).black,
+            backgroundColor: FlutterFlowTheme.of(context).appBarColour,
             automaticallyImplyLeading: true,
             actions: [],
             centerTitle: true,

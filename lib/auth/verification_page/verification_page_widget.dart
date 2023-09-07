@@ -43,6 +43,16 @@ class _VerificationPageWidgetState extends State<VerificationPageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(0.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).appBarColour,
+            automaticallyImplyLeading: true,
+            actions: [],
+            centerTitle: true,
+            elevation: 0.0,
+          ),
+        ),
         body: SafeArea(
           top: true,
           child: Column(

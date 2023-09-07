@@ -64,6 +64,7 @@ abstract class FlutterFlowTheme {
   late Color justWhite;
   late Color bottomNavIcons;
   late Color justBlack;
+  late Color appBarColour;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -163,6 +164,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color justWhite = Color(0xFFFFFFFF);
   late Color bottomNavIcons = Color(0xFFD8D8D8);
   late Color justBlack = Color(0xFF000000);
+  late Color appBarColour = Color(0xFFFF8418);
 }
 
 abstract class Typography {
@@ -345,6 +347,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color justWhite = Color(0xFFFFFFFF);
   late Color bottomNavIcons = Color(0xFFD8D8D8);
   late Color justBlack = Color(0xFF000000);
+  late Color appBarColour = Color(0xFFFF8418);
 }
 
 extension TextStyleHelper on TextStyle {

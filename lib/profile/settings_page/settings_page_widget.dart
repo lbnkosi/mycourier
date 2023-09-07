@@ -42,19 +42,15 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: true,
-          title: Text(
-            'Settings',
-            style: FlutterFlowTheme.of(context).bodySmall.override(
-                  fontFamily: 'Montserrat',
-                  color: FlutterFlowTheme.of(context).justWhite,
-                ),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(0.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).appBarColour,
+            automaticallyImplyLeading: true,
+            actions: [],
+            centerTitle: false,
+            elevation: 0.0,
           ),
-          actions: [],
-          centerTitle: false,
-          elevation: 0.0,
         ),
         body: SafeArea(
           top: true,

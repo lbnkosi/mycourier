@@ -48,7 +48,7 @@ class _TrackingPageWidgetState extends State<TrackingPageWidget> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(0.0),
           child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).black,
+            backgroundColor: FlutterFlowTheme.of(context).appBarColour,
             automaticallyImplyLeading: false,
             actions: [],
             centerTitle: false,

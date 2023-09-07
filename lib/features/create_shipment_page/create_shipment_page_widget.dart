@@ -55,7 +55,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(0.0),
           child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).black,
+            backgroundColor: FlutterFlowTheme.of(context).appBarColour,
             automaticallyImplyLeading: true,
             actions: [],
             centerTitle: true,
