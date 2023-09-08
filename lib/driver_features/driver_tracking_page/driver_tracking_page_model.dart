@@ -1,6 +1,4 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/components/bottom_nav_widget.dart';
-import '/components/quick_view_recent_shipment_widget.dart';
+import '/components/custom_app_bar_widget.dart';
 import '/components/quick_view_shipment_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -10,32 +8,27 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class HomePageModel extends FlutterFlowModel {
+class DriverTrackingPageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Model for CustomAppBar component.
+  late CustomAppBarModel customAppBarModel;
   // Model for QuickViewShipment component.
   late QuickViewShipmentModel quickViewShipmentModel;
-  // Model for QuickViewRecentShipment component.
-  late QuickViewRecentShipmentModel quickViewRecentShipmentModel;
-  // Model for BottomNav component.
-  late BottomNavModel bottomNavModel;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
+    customAppBarModel = createModel(context, () => CustomAppBarModel());
     quickViewShipmentModel =
         createModel(context, () => QuickViewShipmentModel());
-    quickViewRecentShipmentModel =
-        createModel(context, () => QuickViewRecentShipmentModel());
-    bottomNavModel = createModel(context, () => BottomNavModel());
   }
 
   void dispose() {
     unfocusNode.dispose();
+    customAppBarModel.dispose();
     quickViewShipmentModel.dispose();
-    quickViewRecentShipmentModel.dispose();
-    bottomNavModel.dispose();
   }
 
   /// Action blocks are added here.

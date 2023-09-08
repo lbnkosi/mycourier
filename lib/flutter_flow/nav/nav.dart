@@ -186,6 +186,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'SelectVehiclePage',
           path: '/selectVehiclePage',
           builder: (context, params) => SelectVehiclePageWidget(),
+        ),
+        FFRoute(
+          name: 'DriverHomePage',
+          path: '/driverHomePage',
+          builder: (context, params) => DriverHomePageWidget(),
+        ),
+        FFRoute(
+          name: 'DriverTrackingPage',
+          path: '/driverTrackingPage',
+          builder: (context, params) => DriverTrackingPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

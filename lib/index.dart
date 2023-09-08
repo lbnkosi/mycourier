@@ -34,3 +34,7 @@ export '/profile/manage_profile/manage_profile_widget.dart'
     show ManageProfileWidget;
 export '/features/select_vehicle_page/select_vehicle_page_widget.dart'
     show SelectVehiclePageWidget;
+export '/driver_features/driver_home_page/driver_home_page_widget.dart'
+    show DriverHomePageWidget;
+export '/driver_features/driver_tracking_page/driver_tracking_page_widget.dart'
+    show DriverTrackingPageWidget;

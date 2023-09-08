@@ -21,11 +21,6 @@ class ShipmentsRecord extends FirestoreRecord {
   String get id => _id ?? '';
   bool hasId() => _id != null;
 
-  // "name" field.
-  String? _name;
-  String get name => _name ?? '';
-  bool hasName() => _name != null;
-
   // "created" field.
   DateTime? _created;
   DateTime? get created => _created;
@@ -61,9 +56,48 @@ class ShipmentsRecord extends FirestoreRecord {
   String get shipmentCode => _shipmentCode ?? '';
   bool hasShipmentCode() => _shipmentCode != null;
 
+  // "vehicle_type" field.
+  String? _vehicleType;
+  String get vehicleType => _vehicleType ?? '';
+  bool hasVehicleType() => _vehicleType != null;
+
+  // "package_title" field.
+  String? _packageTitle;
+  String get packageTitle => _packageTitle ?? '';
+  bool hasPackageTitle() => _packageTitle != null;
+
+  // "pickup" field.
+  String? _pickup;
+  String get pickup => _pickup ?? '';
+  bool hasPickup() => _pickup != null;
+
+  // "dropoff" field.
+  String? _dropoff;
+  String get dropoff => _dropoff ?? '';
+  bool hasDropoff() => _dropoff != null;
+
+  // "weight" field.
+  String? _weight;
+  String get weight => _weight ?? '';
+  bool hasWeight() => _weight != null;
+
+  // "quantity" field.
+  String? _quantity;
+  String get quantity => _quantity ?? '';
+  bool hasQuantity() => _quantity != null;
+
+  // "status" field.
+  String? _status;
+  String get status => _status ?? '';
+  bool hasStatus() => _status != null;
+
+  // "price" field.
+  String? _price;
+  String get price => _price ?? '';
+  bool hasPrice() => _price != null;
+
   void _initializeFields() {
     _id = snapshotData['id'] as String?;
-    _name = snapshotData['name'] as String?;
     _created = snapshotData['created'] as DateTime?;
     _updated = snapshotData['updated'] as DateTime?;
     _driverId = snapshotData['driver_id'] as String?;
@@ -71,6 +105,14 @@ class ShipmentsRecord extends FirestoreRecord {
     _recipientName = snapshotData['recipient_name'] as String?;
     _recipientSurname = snapshotData['recipient_surname'] as String?;
     _shipmentCode = snapshotData['shipment_code'] as String?;
+    _vehicleType = snapshotData['vehicle_type'] as String?;
+    _packageTitle = snapshotData['package_title'] as String?;
+    _pickup = snapshotData['pickup'] as String?;
+    _dropoff = snapshotData['dropoff'] as String?;
+    _weight = snapshotData['weight'] as String?;
+    _quantity = snapshotData['quantity'] as String?;
+    _status = snapshotData['status'] as String?;
+    _price = snapshotData['price'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -109,7 +151,6 @@ class ShipmentsRecord extends FirestoreRecord {
 
 Map<String, dynamic> createShipmentsRecordData({
   String? id,
-  String? name,
   DateTime? created,
   DateTime? updated,
   String? driverId,
@@ -117,11 +158,18 @@ Map<String, dynamic> createShipmentsRecordData({
   String? recipientName,
   String? recipientSurname,
   String? shipmentCode,
+  String? vehicleType,
+  String? packageTitle,
+  String? pickup,
+  String? dropoff,
+  String? weight,
+  String? quantity,
+  String? status,
+  String? price,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'id': id,
-      'name': name,
       'created': created,
       'updated': updated,
       'driver_id': driverId,
@@ -129,6 +177,14 @@ Map<String, dynamic> createShipmentsRecordData({
       'recipient_name': recipientName,
       'recipient_surname': recipientSurname,
       'shipment_code': shipmentCode,
+      'vehicle_type': vehicleType,
+      'package_title': packageTitle,
+      'pickup': pickup,
+      'dropoff': dropoff,
+      'weight': weight,
+      'quantity': quantity,
+      'status': status,
+      'price': price,
     }.withoutNulls,
   );
 
@@ -141,27 +197,41 @@ class ShipmentsRecordDocumentEquality implements Equality<ShipmentsRecord> {
   @override
   bool equals(ShipmentsRecord? e1, ShipmentsRecord? e2) {
     return e1?.id == e2?.id &&
-        e1?.name == e2?.name &&
         e1?.created == e2?.created &&
         e1?.updated == e2?.updated &&
         e1?.driverId == e2?.driverId &&
         e1?.senderId == e2?.senderId &&
         e1?.recipientName == e2?.recipientName &&
         e1?.recipientSurname == e2?.recipientSurname &&
-        e1?.shipmentCode == e2?.shipmentCode;
+        e1?.shipmentCode == e2?.shipmentCode &&
+        e1?.vehicleType == e2?.vehicleType &&
+        e1?.packageTitle == e2?.packageTitle &&
+        e1?.pickup == e2?.pickup &&
+        e1?.dropoff == e2?.dropoff &&
+        e1?.weight == e2?.weight &&
+        e1?.quantity == e2?.quantity &&
+        e1?.status == e2?.status &&
+        e1?.price == e2?.price;
   }
 
   @override
   int hash(ShipmentsRecord? e) => const ListEquality().hash([
         e?.id,
-        e?.name,
         e?.created,
         e?.updated,
         e?.driverId,
         e?.senderId,
         e?.recipientName,
         e?.recipientSurname,
-        e?.shipmentCode
+        e?.shipmentCode,
+        e?.vehicleType,
+        e?.packageTitle,
+        e?.pickup,
+        e?.dropoff,
+        e?.weight,
+        e?.quantity,
+        e?.status,
+        e?.price
       ]);
 
   @override
