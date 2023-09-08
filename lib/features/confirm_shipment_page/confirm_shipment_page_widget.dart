@@ -69,7 +69,7 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.00, 1.00),
                 child: Padding(
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
@@ -93,7 +93,7 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 32.0, 32.0, 0.0, 0.0),
                             child: Text(
-                              'Confirm shipment',
+                              'Confirm Delivery',
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -106,7 +106,7 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 32.0, 8.0, 32.0, 0.0),
                             child: Text(
-                              'Please confirm the details of your shipment. If you are happy, click continue so you can pay.',
+                              'Please confirm the details of your delivery. If you are happy, click continue so you can pay.',
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -324,11 +324,6 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(
-                                    Icons.fire_truck_rounded,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 18.0,
-                                  ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 16.0, 0.0),
@@ -338,6 +333,8 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                                           .bodySmall
                                           .override(
                                             fontFamily: 'Montserrat',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
@@ -470,7 +467,7 @@ class _ConfirmShipmentPageWidgetState extends State<ConfirmShipmentPageWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.00, 0.00),
                           child: FaIcon(
                             FontAwesomeIcons.arrowLeft,
                             color: FlutterFlowTheme.of(context).justWhite,

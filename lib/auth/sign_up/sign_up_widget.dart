@@ -1,10 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -67,7 +65,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.00, 0.00),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -250,81 +248,53 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController ??=
-                              FormFieldController<String>(
-                            _model.dropDownValue ??= '+27',
-                          ),
-                          options: ['+27'],
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue = val),
-                          width: 90.0,
-                          height: 48.0,
-                          textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24.0,
-                          ),
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          elevation: 2.0,
-                          borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderWidth: 2.0,
-                          borderRadius: 5.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 4.0, 16.0, 4.0),
-                          hidesUnderline: true,
-                          isSearchable: false,
-                          isMultiSelect: false,
-                        ),
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 0.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.phoneController,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelStyle:
-                                    FlutterFlowTheme.of(context).bodySmall,
-                                hintText: 'Phone',
-                                hintStyle:
-                                    FlutterFlowTheme.of(context).bodySmall,
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5.0),
+                          child: TextFormField(
+                            controller: _model.phoneController,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelStyle:
+                                  FlutterFlowTheme.of(context).bodySmall,
+                              hintText: 'Phone',
+                              hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  width: 2.0,
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
+                                borderRadius: BorderRadius.circular(5.0),
                               ),
-                              style: FlutterFlowTheme.of(context).bodySmall,
-                              validator: _model.phoneControllerValidator
-                                  .asValidator(context),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              prefixIcon: Icon(
+                                Icons.phone_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).textFieldIcon,
+                                size: 16.0,
+                              ),
                             ),
+                            style: FlutterFlowTheme.of(context).bodySmall,
+                            validator: _model.phoneControllerValidator
+                                .asValidator(context),
                           ),
                         ),
                       ],
@@ -493,8 +463,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   '${_model.nameController.text} ${_model.surnameController.text}',
                               photoUrl: '',
                               createdTime: getCurrentTimestamp,
-                              phoneNumber:
-                                  '${_model.dropDownValue}${_model.phoneController.text}',
+                              phoneNumber: _model.phoneController.text,
                               name: _model.nameController.text,
                               surname: _model.surnameController.text,
                             ));
@@ -590,7 +559,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.00, 0.00),
                             child: FaIcon(
                               FontAwesomeIcons.google,
                               color: FlutterFlowTheme.of(context).black,
@@ -610,7 +579,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.00, 0.00),
                             child: FaIcon(
                               FontAwesomeIcons.facebook,
                               color: FlutterFlowTheme.of(context).black,
@@ -630,7 +599,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.00, 0.00),
                             child: FaIcon(
                               FontAwesomeIcons.apple,
                               color: FlutterFlowTheme.of(context).black,

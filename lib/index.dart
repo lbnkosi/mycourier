@@ -30,3 +30,7 @@ export '/features/notifications_page/notifications_page_widget.dart'
     show NotificationsPageWidget;
 export '/features/confirm_shipment_page/confirm_shipment_page_widget.dart'
     show ConfirmShipmentPageWidget;
+export '/profile/manage_profile/manage_profile_widget.dart'
+    show ManageProfileWidget;
+export '/features/select_vehicle_page/select_vehicle_page_widget.dart'
+    show SelectVehiclePageWidget;

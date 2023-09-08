@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/util/firestore_util.dart';
 
 import 'schema/users_record.dart';
+import 'schema/shipments_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -14,6 +15,7 @@ export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
 
 export 'schema/users_record.dart';
+export 'schema/shipments_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -47,6 +49,43 @@ Future<List<UsersRecord>> queryUsersRecordOnce({
     queryCollectionOnce(
       UsersRecord.collection,
       UsersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ShipmentsRecords (as a Stream and as a Future).
+Future<int> queryShipmentsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ShipmentsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ShipmentsRecord>> queryShipmentsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ShipmentsRecord.collection,
+      ShipmentsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ShipmentsRecord>> queryShipmentsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ShipmentsRecord.collection,
+      ShipmentsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
@@ -189,7 +228,8 @@ Future maybeCreateUser(User user) async {
 
   final userData = createUsersRecordData(
     email: user.email,
-    displayName: user.displayName,
+    displayName:
+        user.displayName ?? FirebaseAuth.instance.currentUser?.displayName,
     photoUrl: user.photoURL,
     uid: user.uid,
     phoneNumber: user.phoneNumber,

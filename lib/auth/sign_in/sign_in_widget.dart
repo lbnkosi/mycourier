@@ -299,7 +299,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.00, 0.00),
                         child: FaIcon(
                           FontAwesomeIcons.google,
                           color: FlutterFlowTheme.of(context).black,
@@ -318,7 +318,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.00, 0.00),
                         child: FaIcon(
                           FontAwesomeIcons.facebook,
                           color: FlutterFlowTheme.of(context).black,
@@ -337,7 +337,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.00, 0.00),
                         child: FaIcon(
                           FontAwesomeIcons.apple,
                           color: FlutterFlowTheme.of(context).black,

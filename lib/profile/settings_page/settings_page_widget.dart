@@ -1,6 +1,8 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/components/custom_app_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -105,6 +107,154 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                 FlutterFlowTheme.of(context).secondaryText,
                           ),
                         ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        width: 100.0,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 16.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Confirm'),
+                                    content: Text(
+                                        'Are you sure you want to sign out?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Sign Out'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            GoRouter.of(context).prepareAuthEvent();
+                            await authManager.signOut();
+                            GoRouter.of(context).clearRedirectLocation();
+
+                            context.goNamedAuth(
+                              'SignIn',
+                              context.mounted,
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType:
+                                      PageTransitionType.leftToRight,
+                                ),
+                              },
+                            );
+                          }
+                        },
+                        text: 'Sign Out',
+                        options: FFButtonOptions(
+                          width: double.infinity,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: Color(0xFFFF6E00),
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodySmall
+                              .override(
+                                fontFamily: 'Montserrat',
+                                color: FlutterFlowTheme.of(context).justWhite,
+                              ),
+                          elevation: 0.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 32.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Warning'),
+                                    content: Text(
+                                        'Are you sure you want to delete your account?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Delete Account'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            await currentUserReference!.delete();
+                            await authManager.deleteUser(context);
+
+                            context.goNamed(
+                              'SignIn',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType:
+                                      PageTransitionType.leftToRight,
+                                ),
+                              },
+                            );
+                          }
+                        },
+                        text: 'Delete Account',
+                        options: FFButtonOptions(
+                          width: double.infinity,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: Color(0xFFD0000D),
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodySmall
+                              .override(
+                                fontFamily: 'Montserrat',
+                                color: FlutterFlowTheme.of(context).justWhite,
+                              ),
+                          elevation: 0.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
                       ),
                     ),
                   ],

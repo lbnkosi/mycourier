@@ -4,6 +4,7 @@ import '/components/quick_view_recent_shipment_widget.dart';
 import '/components/quick_view_shipment_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     super.initState();
     _model = createModel(context, () => HomePageModel());
 
-    _model.textController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -212,7 +212,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           child: Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Container(
                                                               width: 34.0,
                                                               height: 34.0,
@@ -241,7 +241,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       .fromSTEB(32.0, 32.0,
                                                           32.0, 0.0),
                                                   child: Text(
-                                                    'Let\'s track your package',
+                                                    'Send a package',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleLarge
@@ -261,7 +261,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       .fromSTEB(
                                                           32.0, 8.0, 32.0, 0.0),
                                                   child: Text(
-                                                    'Please enter your tracking number',
+                                                    'Send a package to friends and family',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -278,104 +278,78 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(32.0, 32.0,
                                                           32.0, 0.0),
-                                                  child: TextFormField(
-                                                    controller:
-                                                        _model.textController,
-                                                    obscureText: false,
-                                                    decoration: InputDecoration(
-                                                      labelText: 'Search',
-                                                      labelStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Montserrat',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .justWhite,
-                                                              ),
-                                                      hintStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Montserrat',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .justWhite,
-                                                              ),
-                                                      enabledBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                          'CreateShipmentPage');
+                                                    },
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      height: 45.0,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(35.0),
+                                                        border: Border.all(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .justWhite,
-                                                          width: 1.0,
                                                         ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5.0),
                                                       ),
-                                                      focusedBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .justWhite,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5.0),
-                                                      ),
-                                                      errorBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5.0),
-                                                      ),
-                                                      focusedErrorBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5.0),
-                                                      ),
-                                                      prefixIcon: Icon(
-                                                        Icons.search,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .justWhite,
-                                                        size: 12.0,
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Icon(
+                                                              Icons
+                                                                  .search_rounded,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              size: 16.0,
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'Where to?',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodySmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .justWhite,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .justWhite,
-                                                        ),
-                                                    validator: _model
-                                                        .textControllerValidator
-                                                        .asValidator(context),
                                                   ),
                                                 ),
                                               ],
@@ -388,7 +362,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: AlignmentDirectional(0.00, 1.00),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       32.0, 0.0, 32.0, 0.0),
@@ -426,7 +400,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 child: Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0.0, 0.0),
+                                                          0.00, 0.00),
                                                   child: Icon(
                                                     Icons.add_circle_outlined,
                                                     color: FlutterFlowTheme.of(
@@ -478,7 +452,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 child: Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0.0, 0.0),
+                                                          0.00, 0.00),
                                                   child: Icon(
                                                     Icons.directions_car,
                                                     color: FlutterFlowTheme.of(
@@ -493,7 +467,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Pick Up',
+                                                  'Recieve',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -530,7 +504,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 child: Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0.0, 0.0),
+                                                          0.00, 0.00),
                                                   child: Icon(
                                                     Icons.business,
                                                     color: FlutterFlowTheme.of(
@@ -582,7 +556,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 child: Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0.0, 0.0),
+                                                          0.00, 0.00),
                                                   child: Icon(
                                                     Icons.history,
                                                     color: FlutterFlowTheme.of(
@@ -700,7 +674,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Current Shipment',
+                                'Current delivery',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -759,7 +733,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Recent Shipment',
+                                'Recent delivery',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

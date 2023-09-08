@@ -1,8 +1,6 @@
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -76,13 +74,13 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.00, 1.00),
                 child: Padding(
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: Container(
                     width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 0.7,
+                    height: MediaQuery.sizeOf(context).height * 0.8,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       borderRadius: BorderRadius.circular(10.0),
@@ -100,7 +98,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 32.0, 32.0, 0.0, 0.0),
                             child: Text(
-                              'Create a shipment',
+                              'Plan Delivery',
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -113,7 +111,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 32.0, 8.0, 32.0, 0.0),
                             child: Text(
-                              'To get started with sending a package, please create a shipment',
+                              'To get started with sending a package, please create a delivery',
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -269,7 +267,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                                                                   context)
                                                               .primaryText,
                                                       fontWeight:
-                                                          FontWeight.bold,
+                                                          FontWeight.normal,
                                                     ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
@@ -337,7 +335,8 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    fontWeight: FontWeight.bold,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
                                               validator: _model
                                                   .textController2Validator
@@ -355,7 +354,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 1.0),
+                                              AlignmentDirectional(0.00, 1.00),
                                           child: Container(
                                             width: double.infinity,
                                             decoration: BoxDecoration(),
@@ -379,7 +378,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                                                                     context)
                                                                 .primaryText,
                                                         fontWeight:
-                                                            FontWeight.bold,
+                                                            FontWeight.normal,
                                                       ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
@@ -454,7 +453,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                                                                   context)
                                                               .primaryText,
                                                       fontWeight:
-                                                          FontWeight.bold,
+                                                          FontWeight.normal,
                                                     ),
                                                 validator: _model
                                                     .textController3Validator
@@ -469,72 +468,6 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      32.0, 32.0, 32.0, 0.0),
-                                  child: FlutterFlowChoiceChips(
-                                    options: [
-                                      ChipData('Bike',
-                                          Icons.directions_bike_outlined),
-                                      ChipData('Car', Icons.directions_car),
-                                      ChipData(
-                                          'Truck', Icons.fire_truck_rounded)
-                                    ],
-                                    onChanged: (val) => setState(() =>
-                                        _model.choiceChipsValue = val?.first),
-                                    selectedChipStyle: ChipStyle(
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: FlutterFlowTheme.of(context)
-                                                .justWhite,
-                                            fontSize: 10.0,
-                                          ),
-                                      iconColor: FlutterFlowTheme.of(context)
-                                          .justWhite,
-                                      iconSize: 18.0,
-                                      elevation: 0.0,
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    unselectedChipStyle: ChipStyle(
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .inactivePrimary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                          ),
-                                      iconColor: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      iconSize: 18.0,
-                                      elevation: 0.0,
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    chipSpacing: 12.0,
-                                    rowSpacing: 12.0,
-                                    multiselect: false,
-                                    alignment: WrapAlignment.start,
-                                    controller:
-                                        _model.choiceChipsValueController ??=
-                                            FormFieldController<List<String>>(
-                                      [],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -654,7 +587,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                             child: FFButtonWidget(
                               onPressed: () async {
                                 context.pushNamed(
-                                  'ConfirmShipmentPage',
+                                  'SelectVehiclePage',
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -664,7 +597,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                                   },
                                 );
                               },
-                              text: 'Calculate',
+                              text: 'Select Vehicle',
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 40.0,
@@ -717,7 +650,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.00, 0.00),
                           child: FaIcon(
                             FontAwesomeIcons.arrowLeft,
                             color: FlutterFlowTheme.of(context).justWhite,
@@ -731,7 +664,7 @@ class _CreateShipmentPageWidgetState extends State<CreateShipmentPageWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                         child: Text(
-                          'Create Shipment',
+                          'Plan delivery',
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)
                               .bodyLarge

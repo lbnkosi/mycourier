@@ -132,7 +132,7 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: Text(
-                            'Shipments',
+                            'Deliveries',
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Montserrat',
@@ -170,7 +170,7 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.00, 0.00),
                     child: Icon(
                       Icons.add,
                       color: FlutterFlowTheme.of(context).justWhite,

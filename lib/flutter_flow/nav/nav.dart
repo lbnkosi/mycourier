@@ -176,6 +176,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ConfirmShipmentPage',
           path: '/confirmShipmentPage',
           builder: (context, params) => ConfirmShipmentPageWidget(),
+        ),
+        FFRoute(
+          name: 'ManageProfile',
+          path: '/manageProfile',
+          builder: (context, params) => ManageProfileWidget(),
+        ),
+        FFRoute(
+          name: 'SelectVehiclePage',
+          path: '/selectVehiclePage',
+          builder: (context, params) => SelectVehiclePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

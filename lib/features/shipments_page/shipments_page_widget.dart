@@ -1,6 +1,7 @@
 import '/components/bottom_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -95,7 +96,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           32.0, 0.0, 32.0, 0.0),
                                       child: Text(
-                                        'Shipments',
+                                        'Deliveries',
                                         style: FlutterFlowTheme.of(context)
                                             .titleLarge
                                             .override(
@@ -111,7 +112,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           32.0, 8.0, 32.0, 0.0),
                                       child: Text(
-                                        'View and manage your shipments. Select a shipment to get started',
+                                        'View and manage your deliveries. Select a delivery to get started',
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -156,7 +157,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                               width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                BorderRadius.circular(35.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -166,7 +167,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                               width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                BorderRadius.circular(35.0),
                                           ),
                                           errorBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -176,7 +177,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                               width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                BorderRadius.circular(35.0),
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
@@ -187,7 +188,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                               width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                BorderRadius.circular(35.0),
                                           ),
                                           prefixIcon: Icon(
                                             Icons.search,
@@ -219,7 +220,7 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               32.0, 32.0, 32.0, 16.0),
                           child: Text(
-                            'Shipments History',
+                            'Deliveries History',
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
@@ -278,8 +279,8 @@ class _ShipmentsPageWidgetState extends State<ShipmentsPageWidget> {
                                             ),
                                           ),
                                           child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                            alignment: AlignmentDirectional(
+                                                0.00, 0.00),
                                             child: FaIcon(
                                               FontAwesomeIcons.boxOpen,
                                               color:

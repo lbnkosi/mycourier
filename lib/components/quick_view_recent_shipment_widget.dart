@@ -64,7 +64,7 @@ class _QuickViewRecentShipmentWidgetState
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.00, 0.00),
                 child: FaIcon(
                   FontAwesomeIcons.box,
                   color: FlutterFlowTheme.of(context).primary,

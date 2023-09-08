@@ -118,7 +118,7 @@ class _TrackingPageWidgetState extends State<TrackingPageWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.00, 0.00),
                                         child: FaIcon(
                                           FontAwesomeIcons.boxOpen,
                                           color: FlutterFlowTheme.of(context)
@@ -426,10 +426,40 @@ class _TrackingPageWidgetState extends State<TrackingPageWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            32.0, 32.0, 32.0, 32.0),
+                            32.0, 32.0, 32.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('Button pressed ...');
+                          },
+                          text: 'Rebook Delivery',
+                          options: FFButtonOptions(
+                            width: double.infinity,
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).alternate,
+                            textStyle:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Montserrat',
+                                      color: FlutterFlowTheme.of(context).black,
+                                    ),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            32.0, 16.0, 32.0, 0.0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed('HelpPage');
                           },
                           text: 'Get Help',
                           options: FFButtonOptions(

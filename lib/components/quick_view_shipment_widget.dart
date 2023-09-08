@@ -75,7 +75,7 @@ class _QuickViewShipmentWidgetState extends State<QuickViewShipmentWidget> {
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.00, 0.00),
                           child: FaIcon(
                             FontAwesomeIcons.box,
                             color: FlutterFlowTheme.of(context).black,
@@ -304,7 +304,7 @@ class _QuickViewShipmentWidgetState extends State<QuickViewShipmentWidget> {
             ),
           if (widget.noActiveShipments ?? true)
             Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.00, 0.00),
               child: Text(
                 'No Active Shipments',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(

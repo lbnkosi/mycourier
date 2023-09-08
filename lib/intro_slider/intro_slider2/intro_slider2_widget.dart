@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -120,7 +121,7 @@ class _IntroSlider2WidgetState extends State<IntroSlider2Widget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.00, 0.00),
                                     child: Icon(
                                       Icons.chevron_left_rounded,
                                       color:
@@ -200,7 +201,7 @@ class _IntroSlider2WidgetState extends State<IntroSlider2Widget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.00, 0.00),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
                                       color: Colors.white,

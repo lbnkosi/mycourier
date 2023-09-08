@@ -1,8 +1,6 @@
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,9 +19,6 @@ class CreateShipmentPageModel extends FlutterFlowModel {
   // State field(s) for TextField widget.
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue;
-  FormFieldController<List<String>>? choiceChipsValueController;
   // State field(s) for TextField widget.
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
